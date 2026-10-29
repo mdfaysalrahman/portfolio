@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md Faysal Rahman - Digital Marketer & Web Developer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Plus Jakarta Sans & Syne -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#090D16',
+                            card: '#111827',
+                            border: '#1E293B',
+                            primary: '#6366F1', // Indigo
+                            accent: '#F59E0B',  // Amber
+                            emerald: '#10B981', // Emerald
+                            cyan: '#06B6D4'     // Cyan
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        heading: ['Syne', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-card {
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.2);
+        }
+        .text-gradient-primary {
+            background: linear-gradient(135deg, #818CF8 0%, #6366F1 50%, #4F46E5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-gradient-amber {
+            background: linear-gradient(135deg, #FDE047 0%, #F59E0B 50%, #D97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-gradient-emerald {
+            background: linear-gradient(135deg, #34D399 0%, #10B981 50%, #059669 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Custom Smooth Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #090D16;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1E293B;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6366F1;
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-slate-100 font-sans antialiased selection:bg-brand-primary selection:text-white min-h-screen flex flex-col justify-between">
+
+    <!-- NAVIGATION BAR -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-brand-dark/90 backdrop-blur-md border-b border-slate-800/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Brand SVG Monogram Logo & Name -->
+            <a href="#home" class="flex items-center gap-3.5 group">
+                <div class="relative w-12 h-12 flex items-center justify-center rounded-2xl bg-gradient-to-tr from-brand-primary via-indigo-500 to-brand-amber p-0.5 shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-transform duration-300">
+                    <div class="w-full h-full bg-brand-dark rounded-[14px] flex items-center justify-center overflow-hidden">
+                        <!-- Custom Vector Monogram SVG -->
+                        <svg class="w-8 h-8 text-white" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#818CF8" />
+                                    <stop offset="50%" stop-color="#F59E0B" />
+                                    <stop offset="100%" stop-color="#10B981" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M20 20H55C65 20 72 26 72 35C72 44 65 50 55 50H35V80H20V20Z" fill="url(#logo-grad)" />
+                            <path d="M45 50L68 80H85L60 48L45 50Z" fill="#F59E0B" />
+                            <circle cx="28" cy="35" r="5" fill="#090D16" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-heading text-lg font-extrabold tracking-wider text-white group-hover:text-brand-primary transition-colors">MD FAYSAL RAHMAN</span>
+                    <span class="text-[11px] text-brand-amber font-semibold tracking-widest uppercase">Digital Growth & Tech Architect</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-sm text-slate-300">
+                <a href="#home" class="hover:text-brand-primary transition-colors">Home</a>
+                <a href="#about" class="hover:text-brand-primary transition-colors">About</a>
+                <a href="#services" class="hover:text-brand-primary transition-colors">Services</a>
+                <a href="#calculator" class="hover:text-brand-amber transition-colors">ROI Calculator</a>
+                <a href="#portfolio" class="hover:text-brand-primary transition-colors">Showcase</a>
+                <a href="#contact" class="hover:text-brand-primary transition-colors">Contact</a>
+            </nav>
+
+            <!-- CTA Header Button -->
+            <div class="hidden lg:flex items-center gap-3">
+                <a href="https://wa.me/?text=Hello%20Md%20Faysal%20Rahman,%20I%20want%20to%20discuss%20a%20digital%20marketing%20or%20web%20project." target="_blank" class="px-5 py-2.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-semibold text-sm flex items-center gap-2 transition-all">
+                    <i class="fab fa-whatsapp text-lg"></i>
+                    <span>Quick Consultation</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="menu-toggle" class="md:hidden text-slate-300 hover:text-white focus:outline-none p-2 rounded-lg">
+                <i class="fas fa-bars text-2xl" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-card border-b border-slate-800 px-4 pt-3 pb-6 space-y-3">
+            <a href="#home" class="block text-slate-300 hover:text-brand-primary py-2 font-medium">Home</a>
+            <a href="#about" class="block text-slate-300 hover:text-brand-primary py-2 font-medium">About</a>
+            <a href="#services" class="block text-slate-300 hover:text-brand-primary py-2 font-medium">Services</a>
+            <a href="#calculator" class="block text-brand-amber py-2 font-medium">ROI Calculator</a>
+            <a href="#portfolio" class="block text-slate-300 hover:text-brand-primary py-2 font-medium">Showcase</a>
+            <a href="#contact" class="block text-slate-300 hover:text-brand-primary py-2 font-medium">Contact</a>
+            <a href="https://wa.me/?text=Hello%20Md%20Faysal%20Rahman,%20I%20want%20to%20discuss%20a%20project." target="_blank" class="w-full mt-2 py-3 bg-emerald-600 text-white rounded-xl font-bold flex items-center justify-center gap-2">
+                <i class="fab fa-whatsapp text-xl"></i> Chat on WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="pt-32 pb-20 md:pt-40 md:pb-32 relative overflow-hidden bg-gradient-to-b from-brand-dark via-slate-950 to-brand-dark">
+        <!-- Glowing Lights Background -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-primary/15 blur-[140px] rounded-full pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-96 h-96 bg-brand-amber/10 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Text & Headline -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/10 border border-brand-primary/30 text-indigo-300 text-xs sm:text-sm font-semibold">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        Full-Funnel Digital Marketer & Web Developer
+                    </div>
+
+                    <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
+                        Scaling Brands via <br class="hidden sm:inline">
+                        <span class="text-gradient-primary">Data-Driven Ads</span> & 
+                        <span class="text-gradient-amber">Custom Tech</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        I help e-commerce stores, startups, and enterprises dominate their market through precision social ads (Facebook, Google, TikTok), bulletproof server-side tracking (GTM/GA4/CAPI), and high-converting custom web applications.
+                    </p>
+
+                    <!-- Feature Badges -->
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-3 pt-2">
+                        <span class="bg-slate-900 border border-slate-800 text-slate-300 px-3.5 py-2 rounded-xl text-xs font-semibold flex items-center gap-2">
+                            <i class="fab fa-facebook text-blue-500 text-sm"></i> Meta Ads Specialist
+                        </span>
+                        <span class="bg-slate-900 border border-slate-800 text-slate-300 px-3.5 py-2 rounded-xl text-xs font-semibold flex items-center gap-2">
+                            <i class="fab fa-google text-red-400 text-sm"></i> Google PPC & YouTube
+                        </span>
+                        <span class="bg-slate-900 border border-slate-800 text-slate-300 px-3.5 py-2 rounded-xl text-xs font-semibold flex items-center gap-2">
+                            <i class="fas fa-server text-brand-cyan text-sm"></i> Server-Side CAPI
+                        </span>
+                        <span class="bg-slate-900 border border-slate-800 text-slate-300 px-3.5 py-2 rounded-xl text-xs font-semibold flex items-center gap-2">
+                            <i class="fas fa-code text-brand-amber text-sm"></i> Full-Stack Web Dev
+                        </span>
+                    </div>
+
+                    <!-- Call to Action Buttons -->
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-brand-primary to-indigo-600 hover:from-indigo-500 hover:to-brand-primary text-white font-bold text-base shadow-xl shadow-indigo-600/30 hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
+                            <i class="fas fa-rocket"></i> Launch Growth Campaign
+                        </a>
+                        <a href="#calculator" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white border border-slate-700 font-semibold text-base transition-all text-center flex items-center justify-center gap-2">
+                            <i class="fas fa-calculator text-brand-amber"></i> Calculate Projected ROI
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Graphic Banner -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md lg:max-w-none">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-brand-primary via-brand-amber to-brand-emerald rounded-3xl blur-lg opacity-30 animate-pulse"></div>
+                        
+                        <div class="relative rounded-3xl overflow-hidden border border-slate-800 bg-brand-card shadow-2xl p-6 space-y-6">
+                            
+                            <!-- Header Info -->
+                            <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-2xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-xl font-black">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-white font-bold text-base">Growth Dashboard</h3>
+                                        <p class="text-xs text-slate-400">Live Campaign Performance</p>
+                                    </div>
+                                </div>
+                                <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold border border-emerald-500/30">Active</span>
+                            </div>
+
+                            <!-- Live Visual Stats Card -->
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-slate-900/80 p-4 rounded-2xl border border-slate-800">
+                                    <span class="text-xs text-slate-400 block font-medium">Avg. Campaign ROAS</span>
+                                    <span class="text-2xl font-black text-brand-emerald">5.4x - 12.8x</span>
+                                    <span class="text-[10px] text-emerald-400 block mt-1"><i class="fas fa-arrow-up"></i> +142% vs Industry</span>
+                                </div>
+                                <div class="bg-slate-900/80 p-4 rounded-2xl border border-slate-800">
+                                    <span class="text-xs text-slate-400 block font-medium">Server Tracking</span>
+                                    <span class="text-2xl font-black text-brand-cyan">99.9%</span>
+                                    <span class="text-[10px] text-brand-cyan block mt-1"><i class="fas fa-shield-alt"></i> iOS 14+ Bypass</span>
+                                </div>
+                            </div>
+
+                            <!-- High-Tech SVG Diagram Illustration -->
+                            <div class="relative h-48 rounded-2xl bg-slate-900/90 border border-slate-800 p-4 flex flex-col justify-between overflow-hidden">
+                                <div class="flex items-center justify-between text-xs text-slate-400 font-semibold">
+                                    <span><i class="fas fa-database text-brand-primary"></i> Data Flow Matrix</span>
+                                    <span class="text-brand-amber">GTM + GA4 + CAPI</span>
+                                </div>
+                                <svg class="w-full h-24 my-auto" viewBox="0 0 300 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10 60 Q 75 10, 150 50 T 290 20" stroke="url(#hero-line-grad)" stroke-width="4" fill="none" stroke-linecap="round" />
+                                    <circle cx="10" cy="60" r="5" fill="#818CF8" />
+                                    <circle cx="150" cy="50" r="5" fill="#F59E0B" />
+                                    <circle cx="290" cy="20" r="6" fill="#10B981" />
+                                    <defs>
+                                        <linearGradient id="hero-line-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                            <stop offset="0%" stop-color="#818CF8" />
+                                            <stop offset="50%" stop-color="#F59E0B" />
+                                            <stop offset="100%" stop-color="#10B981" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                                <div class="flex items-center justify-between text-[11px] text-slate-400">
+                                    <span>Traffic Origin</span>
+                                    <span>Server Processing</span>
+                                    <span class="text-emerald-400 font-bold">Verified Conversion</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- METRICS & COUNTERS -->
+    <section class="py-10 bg-slate-900/60 border-y border-slate-800 relative z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="space-y-1">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-gradient-primary">৳১.৫+ কোটি</div>
+                    <div class="text-xs sm:text-sm text-slate-400 font-medium uppercase tracking-wider">Ad Spend Managed</div>
+                </div>
+                <div class="space-y-1">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-gradient-amber">৫০০+</div>
+                    <div class="text-xs sm:text-sm text-slate-400 font-medium uppercase tracking-wider">Successful Funnels</div>
+                </div>
+                <div class="space-y-1">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-gradient-emerald">৯৯.৯%</div>
+                    <div class="text-xs sm:text-sm text-slate-400 font-medium uppercase tracking-wider">Tracking Accuracy</div>
+                </div>
+                <div class="space-y-1">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-indigo-400">১০০%</div>
+                    <div class="text-xs sm:text-sm text-slate-400 font-medium uppercase tracking-wider">Client Growth Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT ME & PHILOSOPHY -->
+    <section id="about" class="py-24 relative overflow-hidden bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Graphic Card -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <div class="absolute -top-4 -left-4 w-full h-full border-2 border-brand-primary/30 rounded-3xl pointer-events-none"></div>
+                        <div class="glass-card p-8 rounded-3xl space-y-6 text-center">
+                            
+                            <div class="w-24 h-24 mx-auto rounded-3xl bg-gradient-to-tr from-brand-primary to-brand-amber p-1 shadow-xl">
+                                <div class="w-full h-full bg-brand-dark rounded-[22px] flex items-center justify-center">
+                                    <i class="fas fa-user-tie text-4xl text-white"></i>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3 class="text-2xl font-bold text-white font-heading">Md Faysal Rahman</h3>
+                                <p class="text-sm text-brand-amber font-semibold mt-1">Growth Engineer & Digital Marketer</p>
+                            </div>
+
+                            <p class="text-xs text-slate-300 leading-relaxed">
+                                Specializing in data engineering, automated ad funnels, server tracking, and high-converting e-commerce web deployment.
+                            </p>
+
+                            <div class="pt-2 flex justify-center gap-3">
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-300"><i class="fas fa-check text-emerald-400"></i> Full Stack</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-300"><i class="fas fa-check text-emerald-400"></i> Media Buyer</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Content -->
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-brand-amber text-xs font-bold uppercase tracking-widest bg-brand-amber/10 px-3 py-1 rounded-md">Architecting E-Commerce Success</span>
+                    
+                    <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                        Bridging Technical Code & Explosive Marketing Growth
+                    </h2>
+
+                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+                        I am <strong class="text-white">Md Faysal Rahman</strong>. Unlike traditional media buyers who only manage ad dashboards, I bring deep full-stack web development expertise to the table. I engineer the entire technical funnel — from server-side conversion tracking and speed optimization to landing page user psychology and high-margin product sourcing.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        <div class="glass-card p-4 rounded-2xl flex items-start gap-3">
+                            <i class="fas fa-bullseye text-brand-primary text-xl mt-1"></i>
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Omni-Channel Ads</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">Facebook, Instagram, TikTok, Google Search & YouTube</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-4 rounded-2xl flex items-start gap-3">
+                            <i class="fas fa-network-wired text-brand-cyan text-xl mt-1"></i>
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Server-Side Tracking</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">GA4, GTM, Stape.io & Meta Conversion API (iOS 14+ Fix)</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-4 rounded-2xl flex items-start gap-3">
+                            <i class="fas fa-funnel-dollar text-brand-emerald text-xl mt-1"></i>
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Funnel Architecture</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">High-converting landing pages & automated sales funnels</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-4 rounded-2xl flex items-start gap-3">
+                            <i class="fas fa-boxes text-brand-amber text-xl mt-1"></i>
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Winning Product Sourcing</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">High-demand product research & competitor analysis</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES & OFFER PACKAGES -->
+    <section id="services" class="py-24 bg-slate-950 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-brand-primary text-xs font-bold uppercase tracking-widest bg-brand-primary/10 px-3 py-1 rounded-md">Growth Solutions</span>
+                <h2 class="font-heading text-3xl sm:text-5xl font-black text-white">Specialized Offer Packages</h2>
+                <p class="text-slate-400 text-base sm:text-lg">Turnkey digital marketing and technical tracking solutions engineered for maximum ROI.</p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Package 1: Server-Side Tracking -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between border border-slate-800 hover:border-brand-cyan/60 transition-all duration-300 group">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-cyan/20 text-brand-cyan flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <span class="px-2.5 py-1 rounded-full bg-brand-cyan/10 text-brand-cyan text-[10px] font-bold tracking-wide uppercase border border-brand-cyan/30">Essential</span>
+                        <h3 class="text-xl font-bold text-white group-hover:text-brand-cyan transition-colors">Server-Side & Browser Tracking</h3>
+                        <p class="text-xs text-slate-400">Bypass iOS 14+ blocking and ad blockers with accurate server-side data tracking.</p>
+                        
+                        <ul class="text-xs text-slate-300 space-y-2.5 pt-2">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-brand-cyan"></i> GTM Tag, Trigger & Variable Setup</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-brand-cyan"></i> Stape.io Server Connection</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-brand-cyan"></i> Data Layer & GA4 E-commerce</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-brand-cyan"></i> Meta CAPI & Conversion API Fix</li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-6 mt-6 border-t border-slate-800/80 flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] text-slate-400 block uppercase">Starting Price</span>
+                            <span class="text-2xl font-black text-brand-cyan">৳২,৪৯৯/-</span>
+                        </div>
+                        <a href="#contact" onclick="selectServiceInquiry('Server-Side Tracking')" class="px-4 py-2 rounded-xl bg-brand-cyan/20 text-brand-cyan hover:bg-brand-cyan hover:text-slate-950 font-bold text-xs transition-colors">Order Package</a>
+                    </div>
+                </div>
+
+                <!-- Package 2: E-Commerce Roadmap -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between border border-slate-800 hover:border-brand-amber/60 transition-all duration-300 group">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-amber/20 text-brand-amber flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <span class="px-2.5 py-1 rounded-full bg-brand-amber/10 text-brand-amber text-[10px] font-bold tracking-wide uppercase border border-brand-amber/30">High Growth</span>
+                        <h3 class="text-xl font-bold text-white group-hover:text-brand-amber transition-colors">E-Commerce Business Roadmap</h3>
+                        <p class="text-xs text-slate-400">Complete roadmap from zero to 7-figure brand scaling strategy.</p>
+                        
+                        <ul class="text-xs text-slate-300 space-y-2.5 pt-2">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-brand-amber"></i> Niche & Winning Product Selection</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-brand-amber"></i> High-Converting Landing Page</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-brand-amber"></i> Multi-Channel Ad Funnel Strategy</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-brand-amber"></i> Branding & Customer Trust Building</li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-6 mt-6 border-t border-slate-800/80 flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] text-slate-400 block uppercase">Starting Price</span>
+                            <span class="text-2xl font-black text-brand-amber">৳৫,০০০/-</span>
+                        </div>
+                        <a href="#contact" onclick="selectServiceInquiry('E-Commerce Roadmap')" class="px-4 py-2 rounded-xl bg-brand-amber/20 text-brand-amber hover:bg-brand-amber hover:text-slate-950 font-bold text-xs transition-colors">Order Package</a>
+                    </div>
+                </div>
+
+                <!-- Package 3: Business & Funnel Planning -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between border border-slate-800 hover:border-brand-emerald/60 transition-all duration-300 group">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-emerald/20 text-brand-emerald flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                            <i class="fas fa-funnel-dollar"></i>
+                        </div>
+                        <span class="px-2.5 py-1 rounded-full bg-brand-emerald/10 text-brand-emerald text-[10px] font-bold tracking-wide uppercase border border-brand-emerald/30">Conversion Strategy</span>
+                        <h3 class="text-xl font-bold text-white group-hover:text-brand-emerald transition-colors">Business & Funnel Architecture</h3>
+                        <p class="text-xs text-slate-400">Design customer acquisition funnels that convert cold visitors into repeat customers.</p>
+                        
+                        <ul class="text-xs text-slate-300 space-y-2.5 pt-2">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-brand-emerald"></i> Market Research & Competitor Audit</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-brand-emerald"></i> Sales & Retargeting Funnel Design</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-brand-emerald"></i> Customer Journey & Conversion Optimization</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-brand-emerald"></i> Upsell & Cross-sell Systems</li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-6 mt-6 border-t border-slate-800/80 flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] text-slate-400 block uppercase">Starting Price</span>
+                            <span class="text-2xl font-black text-brand-emerald">৳৫,০০০/-</span>
+                        </div>
+                        <a href="#contact" onclick="selectServiceInquiry('Funnel Architecture')" class="px-4 py-2 rounded-xl bg-brand-emerald/20 text-brand-emerald hover:bg-brand-emerald hover:text-slate-950 font-bold text-xs transition-colors">Order Package</a>
+                    </div>
+                </div>
+
+                <!-- Package 4: Product Sourcing & Research -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between border border-slate-800 hover:border-brand-primary/60 transition-all duration-300 group">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-primary/20 text-indigo-400 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                            <i class="fas fa-search-dollar"></i>
+                        </div>
+                        <span class="px-2.5 py-1 rounded-full bg-brand-primary/10 text-indigo-400 text-[10px] font-bold tracking-wide uppercase border border-brand-primary/30">Market Intelligence</span>
+                        <h3 class="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors">Product Sourcing & Research</h3>
+                        <p class="text-xs text-slate-400">Find trending, winning products with high profit margins and reliable supply chains.</p>
+                        
+                        <ul class="text-xs text-slate-300 space-y-2.5 pt-2">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-indigo-400"></i> Winning Product Selection & Testing</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-indigo-400"></i> High-Demand Market Analytics</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-indigo-400"></i> Supplier & Local Sourcing Guide</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-indigo-400"></i> Competitor Pricing & Margin Planning</li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-6 mt-6 border-t border-slate-800/80 flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] text-slate-400 block uppercase">Starting Price</span>
+                            <span class="text-2xl font-black text-indigo-400">৳৫,০০০/-</span>
+                        </div>
+                        <a href="#contact" onclick="selectServiceInquiry('Product Sourcing')" class="px-4 py-2 rounded-xl bg-brand-primary/20 text-indigo-400 hover:bg-brand-primary hover:text-white font-bold text-xs transition-colors">Order Package</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE ROI & AD SPEND CALCULATOR -->
+    <section id="calculator" class="py-24 bg-brand-dark relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center space-y-3 mb-12">
+                <span class="text-brand-amber text-xs font-bold uppercase tracking-widest bg-brand-amber/10 px-3 py-1 rounded-md">Interactive Projection Tool</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-black text-white">Campaign Revenue & ROAS Simulator</h2>
+                <p class="text-slate-400 text-sm sm:text-base">Estimate your monthly gross revenue and net profit based on planned ad budget and target ROAS.</p>
+            </div>
+
+            <div class="glass-card rounded-3xl p-8 border border-slate-800 shadow-2xl">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    
+                    <!-- Calculator Sliders -->
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label class="text-xs font-bold text-slate-300 uppercase tracking-wider">Monthly Ad Spend (BDT)</label>
+                                <span id="budget-val" class="text-lg font-black text-brand-amber">৳৫০,০০০</span>
+                            </div>
+                            <input type="range" id="budget-range" min="10000" max="500000" step="5000" value="50000" class="w-full accent-brand-amber bg-slate-800 rounded-lg cursor-pointer">
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label class="text-xs font-bold text-slate-300 uppercase tracking-wider">Target Campaign ROAS</label>
+                                <span id="roas-val" class="text-lg font-black text-brand-emerald">4.5x</span>
+                            </div>
+                            <input type="range" id="roas-range" min="2.0" max="10.0" step="0.5" value="4.5" class="w-full accent-brand-emerald bg-slate-800 rounded-lg cursor-pointer">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Primary Marketing Platform</label>
+                            <select id="platform-select" class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl p-3 text-sm font-semibold outline-none focus:border-brand-primary">
+                                <option value="Meta Ads (Facebook & Instagram)">Meta Ads (Facebook & Instagram)</option>
+                                <option value="Google Search & YouTube PPC">Google Search & YouTube PPC</option>
+                                <option value="TikTok Video Marketing">TikTok Video Marketing</option>
+                                <option value="Omni-Channel Full Funnel">Omni-Channel Full Funnel (Max Growth)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Projected Results Card -->
+                    <div class="bg-slate-900/90 rounded-2xl p-6 border border-slate-800 space-y-6 text-center md:text-left">
+                        <div class="border-b border-slate-800 pb-4">
+                            <span class="text-xs text-slate-400 block font-medium">Projected Gross Revenue</span>
+                            <span id="projected-revenue" class="text-3xl sm:text-4xl font-black text-gradient-amber">৳২,২৫,০০০</span>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <span class="text-[11px] text-slate-400 block">Est. Profit Margin</span>
+                                <span id="projected-profit" class="text-xl font-bold text-emerald-400">৳১,৭৫,০০০</span>
+                            </div>
+                            <div>
+                                <span class="text-[11px] text-slate-400 block">Est. Return Multiple</span>
+                                <span id="projected-multiple" class="text-xl font-bold text-brand-cyan">350% Net</span>
+                            </div>
+                        </div>
+
+                        <a href="#contact" id="calc-cta-btn" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-brand-amber to-yellow-600 hover:from-yellow-500 hover:to-brand-amber text-slate-950 font-black text-sm flex items-center justify-center gap-2 transition-all shadow-lg">
+                            <i class="fas fa-paper-plane"></i> Lock In Growth Strategy
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PORTFOLIO & SHOWCASE GALLERY -->
+    <section id="portfolio" class="py-24 bg-slate-950 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-3 mb-12">
+                <span class="text-brand-cyan text-xs font-bold uppercase tracking-widest bg-brand-cyan/10 px-3 py-1 rounded-md">Visual Proof & Projects</span>
+                <h2 class="font-heading text-3xl sm:text-5xl font-black text-white">Campaign & Tech Portfolio</h2>
+                <p class="text-slate-400 text-sm sm:text-base">Explore high-converting ad concepts, server-side data architectures, and custom landing page builds.</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-3 mb-10">
+                <button onclick="filterPortfolio('all')" class="port-filter-btn px-5 py-2 rounded-full bg-brand-primary text-white font-bold text-xs sm:text-sm active">All Projects</button>
+                <button onclick="filterPortfolio('tracking')" class="port-filter-btn px-5 py-2 rounded-full bg-slate-800 text-slate-300 hover:bg-slate-700 font-medium text-xs sm:text-sm">Server Tracking</button>
+                <button onclick="filterPortfolio('ads')" class="port-filter-btn px-5 py-2 rounded-full bg-slate-800 text-slate-300 hover:bg-slate-700 font-medium text-xs sm:text-sm">Paid Ad Strategy</button>
+                <button onclick="filterPortfolio('web')" class="port-filter-btn px-5 py-2 rounded-full bg-slate-800 text-slate-300 hover:bg-slate-700 font-medium text-xs sm:text-sm">Web & Funnels</button>
+            </div>
+
+            <!-- Portfolio Items Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+                
+                <!-- Project 1: Server Side Tracking Diagram -->
+                <div class="port-item tracking glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-brand-cyan/60 transition-all duration-300 group cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80', 'GTM + Server-Side Tracking Architecture')">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Server Side Data Dashboard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-bold gap-2">
+                            <i class="fas fa-search-plus text-base"></i> Click to Enlarge Blueprint
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-2">
+                        <span class="text-brand-cyan text-[10px] font-bold uppercase tracking-wider">Data Infrastructure</span>
+                        <h4 class="text-lg font-bold text-white group-hover:text-brand-cyan transition-colors">Server-Side Tracking & Meta CAPI Fix</h4>
+                        <p class="text-xs text-slate-400">Eliminated 35% data loss caused by iOS 14+ ad blockers using GTM Server and Stape.io.</p>
+                    </div>
+                </div>
+
+                <!-- Project 2: High ROAS Facebook Ad Strategy -->
+                <div class="port-item ads glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-brand-amber/60 transition-all duration-300 group cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80', 'Meta Ads Scaled Campaign Dashboard')">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Analytics and ROAS Dashboard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-bold gap-2">
+                            <i class="fas fa-search-plus text-base"></i> Click to Enlarge Results
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-2">
+                        <span class="text-brand-amber text-[10px] font-bold uppercase tracking-wider">Media Buying</span>
+                        <h4 class="text-lg font-bold text-white group-hover:text-brand-amber transition-colors">6.8x ROAS E-Commerce Scaling</h4>
+                        <p class="text-xs text-slate-400">Scaled a local fashion brand from ৳50,000 to ৳8,000,000 monthly revenue using dynamic creative testing.</p>
+                    </div>
+                </div>
+
+                <!-- Project 3: Custom WooCommerce Landing Page -->
+                <div class="port-item web glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-brand-emerald/60 transition-all duration-300 group cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80', 'Custom E-Commerce Landing Page')">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80" alt="E-Commerce Web Design" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-bold gap-2">
+                            <i class="fas fa-search-plus text-base"></i> Click to Enlarge Preview
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-2">
+                        <span class="text-brand-emerald text-[10px] font-bold uppercase tracking-wider">Web Engineering</span>
+                        <h4 class="text-lg font-bold text-white group-hover:text-brand-emerald transition-colors">Ultra-Fast Conversion Funnel</h4>
+                        <p class="text-xs text-slate-400">Engineered a 1.2-second load time custom landing page with 1-click checkout integration.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT & CONSULTATION SECTION -->
+    <section id="contact" class="py-24 bg-brand-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Direct Contact Details -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-brand-primary text-xs font-bold uppercase tracking-widest bg-brand-primary/10 px-3 py-1 rounded-md">Let's Connect</span>
+                        <h2 class="font-heading text-3xl sm:text-5xl font-black text-white mt-3">Ready to Grow Your Business?</h2>
+                        <p class="text-slate-400 text-sm sm:text-base mt-2">Book a direct consultation session or send an inquiry for custom marketing & web projects.</p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="glass-card p-4 rounded-2xl flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <span class="text-[10px] text-slate-400 block uppercase font-medium">WhatsApp Instant Chat</span>
+                                <a href="https://wa.me/?text=Hello%20Md%20Faysal%20Rahman,%20I%20want%20to%20discuss%20a%20project." target="_blank" class="text-white font-bold text-sm hover:text-emerald-400 transition-colors">+880 (WhatsApp Consultation)</a>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-4 rounded-2xl flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-primary/20 text-indigo-400 flex items-center justify-center text-xl">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="text-[10px] text-slate-400 block uppercase font-medium">Direct Email</span>
+                                <span class="text-white font-bold text-sm">faysal.marketing@example.com</span>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-4 rounded-2xl flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-amber/20 text-brand-amber flex items-center justify-center text-xl">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div>
+                                <span class="text-[10px] text-slate-400 block uppercase font-medium">Service Scope</span>
+                                <span class="text-white font-bold text-sm">Worldwide Remote E-Commerce Scaling</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inquiry Form -->
+                <div class="lg:col-span-7 glass-card p-8 sm:p-10 rounded-3xl border border-slate-800 shadow-2xl">
+                    <form id="contact-form" onsubmit="handleInquirySubmit(event)" class="space-y-6">
+                        <h3 class="text-2xl font-bold text-white font-heading">Start a Growth Conversation</h3>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Your Name</label>
+                                <input type="text" required placeholder="John Doe" class="w-full bg-slate-900 border border-slate-700 focus:border-brand-primary rounded-xl p-3.5 text-white text-sm outline-none transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Phone / WhatsApp</label>
+                                <input type="tel" required placeholder="+880 1700-000000" class="w-full bg-slate-900 border border-slate-700 focus:border-brand-primary rounded-xl p-3.5 text-white text-sm outline-none transition-colors">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Selected Package or Interest</label>
+                            <select id="form-package-select" class="w-full bg-slate-900 border border-slate-700 focus:border-brand-primary rounded-xl p-3.5 text-white text-sm outline-none transition-colors font-medium">
+                                <option value="General Digital Marketing">General Digital Marketing & Web Development</option>
+                                <option value="Server-Side Tracking">Server-Side & Browser-Side Tracking (৳2,499)</option>
+                                <option value="E-Commerce Roadmap">E-Commerce Roadmap 0 to 1 Crore (৳5,000)</option>
+                                <option value="Funnel Architecture">Business & Funnel Architecture (৳5,000)</option>
+                                <option value="Product Sourcing">Product Sourcing & Research (৳5,000)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Project Goal / Details</label>
+                            <textarea rows="4" required placeholder="Briefly describe your business, monthly ad budget, and current goals..." class="w-full bg-slate-900 border border-slate-700 focus:border-brand-primary rounded-xl p-3.5 text-white text-sm outline-none transition-colors"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-primary to-indigo-600 hover:from-indigo-500 hover:to-brand-primary text-white font-bold text-base shadow-xl shadow-indigo-600/30 transition-all">
+                            Send Message via WhatsApp
+                        </button>
+                    </form>
+
+                    <div id="form-alert" class="hidden mt-6 p-4 rounded-xl bg-emerald-900/60 border border-emerald-500 text-emerald-200 text-sm text-center">
+                        <i class="fas fa-check-circle text-lg mb-1 block text-emerald-400"></i>
+                        Connecting to WhatsApp with your project details...
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 border-t border-slate-800/80 py-10 text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 space-y-4">
+            <div class="flex items-center justify-center gap-3">
+                <div class="w-6 h-6 rounded-lg bg-brand-primary flex items-center justify-center text-white text-xs font-bold">FR</div>
+                <span class="text-sm font-bold text-white font-heading">MD FAYSAL RAHMAN</span>
+            </div>
+            <p>© 2026 Md Faysal Rahman. All Rights Reserved. Full-Funnel Growth Engineering.</p>
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md hidden items-center justify-center p-4">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white text-3xl hover:text-brand-amber p-2">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="max-w-4xl w-full max-h-[90vh] flex flex-col items-center justify-center">
+            <img id="lightbox-img" src="" alt="Expanded Preview" class="max-h-[80vh] max-w-full rounded-2xl object-contain border border-slate-800 shadow-2xl">
+            <p id="lightbox-caption" class="text-white text-center mt-4 text-sm font-semibold"></p>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT FOR INTERACTIVITY -->
+    <script>
+        // Mobile Navigation Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.classList.toggle('fa-bars');
+            menuIcon.classList.toggle('fa-times');
+        });
+
+        // ROI Calculator Logic
+        const budgetRange = document.getElementById('budget-range');
+        const roasRange = document.getElementById('roas-range');
+        const budgetVal = document.getElementById('budget-val');
+        const roasVal = document.getElementById('roas-val');
+        const projectedRevenue = document.getElementById('projected-revenue');
+        const projectedProfit = document.getElementById('projected-profit');
+        const projectedMultiple = document.getElementById('projected-multiple');
+
+        function updateCalculator() {
+            const budget = parseInt(budgetRange.value);
+            const roas = parseFloat(roasRange.value);
+
+            budgetVal.textContent = `৳${budget.toLocaleString('en-IN')}`;
+            roasVal.textContent = `${roas.toFixed(1)}x`;
+
+            const grossRevenue = Math.round(budget * roas);
+            const netProfit = Math.round(grossRevenue - budget);
+            const returnPercentage = Math.round(((grossRevenue - budget) / budget) * 100);
+
+            projectedRevenue.textContent = `৳${grossRevenue.toLocaleString('en-IN')}`;
+            projectedProfit.textContent = `৳${netProfit.toLocaleString('en-IN')}`;
+            projectedMultiple.textContent = `${returnPercentage}% Net`;
+        }
+
+        budgetRange.addEventListener('input', updateCalculator);
+        roasRange.addEventListener('input', updateCalculator);
+        updateCalculator();
+
+        // Service Selection Bridge to Form
+        function selectServiceInquiry(serviceName) {
+            const select = document.getElementById('form-package-select');
+            for (let i = 0; i < select.options.length; i++) {
+                if (select.options[i].value.includes(serviceName) || select.options[i].text.includes(serviceName)) {
+                    select.selectedIndex = i;
+                    break;
+                }
+            }
+        }
+
+        // Portfolio Category Filter
+        function filterPortfolio(category) {
+            const items = document.querySelectorAll('.port-item');
+            const buttons = document.querySelectorAll('.port-filter-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-brand-primary', 'text-white', 'font-bold');
+                btn.classList.add('bg-slate-800', 'text-slate-300');
+            });
+
+            event.target.classList.remove('bg-slate-800', 'text-slate-300');
+            event.target.classList.add('bg-brand-primary', 'text-white', 'font-bold');
+
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Lightbox Modal
+        function openLightbox(src, caption) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox-caption').textContent = caption;
+            document.getElementById('lightbox-modal').classList.remove('hidden');
+            document.getElementById('lightbox-modal').classList.add('flex');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox-modal').classList.add('hidden');
+            document.getElementById('lightbox-modal').classList.remove('flex');
+        }
+
+        document.getElementById('lightbox-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox-modal') closeLightbox();
+        });
+
+        // Form Submission
+        function handleInquirySubmit(e) {
+            e.preventDefault();
+            const alertBox = document.getElementById('form-alert');
+            alertBox.classList.remove('hidden');
+
+            const selectedPackage = document.getElementById('form-package-select').value;
+            setTimeout(() => {
+                const message = encodeURIComponent(`Hello Md Faysal Rahman, I submitted an inquiry for: ${selectedPackage}. I would like to schedule a growth consultation.`);
+                window.open(`https://wa.me/?text=${message}`, '_blank');
+            }, 1200);
+        }
+    </script>
+</body>
+</html>
